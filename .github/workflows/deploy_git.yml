@@ -21,7 +21,7 @@ jobs:
         BRANCH: main
         TAG: "${{ github.ref }}"
         FORCE: false
-        APP_NAME: gentle-lowlands-50246
+        APP_NAME: polar-stream-24940
       run: |-
         heroku maintenance:on --app ${{ env.APP_NAME }}
         if ${{ env.FORCE }};then
