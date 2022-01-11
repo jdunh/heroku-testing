@@ -1,0 +1,24 @@
+version: 2.1
+
+orbs:
+  heroku: circleci/heroku@1.2.6
+
+jobs:
+  example:
+    executor: heroku/default
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 19.03.13
+      - heroku/install
+      - heroku/deploy-via-git:
+          api-key: HEROKU_API_KEY
+          app-name: "gentle-dawn-77005"
+          tag: v1
+          maintenance-mode: false
+
+workflows:
+  heroku_deploy:
+    jobs:
+      - example:
+          context: jd-context
