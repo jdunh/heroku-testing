@@ -8,6 +8,8 @@ jobs:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     - shell: bash
       run: |-
         if [[ $(command -v heroku) == "" ]]; then
