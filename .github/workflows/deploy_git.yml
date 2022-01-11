@@ -21,7 +21,7 @@ jobs:
         BRANCH: main
         TAG: "${{ github.ref }}"
         FORCE: true
-        APP_NAME: immense-journey-86899
+        APP_NAME: gentle-lowlands-50246
       run: |-
         heroku maintenance:on --app ${{ env.APP_NAME }}
         if ${{ env.FORCE }};then
